@@ -36,18 +36,26 @@ export const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div className="border-[3px] border-black rounded-[40px] p-8 bg-white flex flex-col">
-                        <h4 className="font-black text-2xl text-black mb-6 uppercase inline-block border-b-[3px] border-black pb-2 self-start">
-                            Quick Links
-                        </h4>
-                        <ul className="space-y-4">
+                    <div className="border-[3px] border-black rounded-[40px] p-8 bg-[#4285F4] flex flex-col shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                        <div className="flex items-center justify-between mb-6 border-b-[3px] border-black pb-4">
+                            <h4 className="font-black text-2xl text-white uppercase inline-block tracking-tight" style={{ WebkitTextStroke: '1px black' }}>
+                                Quick Links
+                            </h4>
+                            <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border-[2.5px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#EA4335] border border-black inline-block"></span>
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FBBC04] border border-black inline-block"></span>
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#34A853] border border-black inline-block"></span>
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#4285F4] border border-black inline-block"></span>
+                            </div>
+                        </div>
+                        <ul className="space-y-3">
                             {NAV_LINKS.map((link) => (
                                 <li key={link.path}>
                                     <Link
                                         to={link.path}
-                                        className="text-black hover:bg-[#34A853] hover:text-white transition-colors text-lg font-black uppercase flex items-center border-[3px] border-transparent hover:border-black rounded-full p-2 px-4 group"
+                                        className="text-black bg-white hover:bg-black hover:text-white transition-all text-base font-black uppercase flex items-center border-[3px] border-black rounded-2xl p-2.5 px-4 group shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1"
                                     >
-                                        <span className="w-0 h-1 bg-black transition-all group-hover:w-6 mr-0 group-hover:mr-3 rounded-full"></span>
+                                        <span className="w-2 h-2 bg-[#4285F4] group-hover:bg-[#34A853] transition-all mr-3 rounded-full border border-black"></span>
                                         {link.label}
                                     </Link>
                                 </li>
