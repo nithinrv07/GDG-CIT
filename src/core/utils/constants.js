@@ -52,6 +52,7 @@ export const SOCIAL_ICONS = {
 export const NAV_LINKS = [
     { label: 'Home', path: '/' },
     { label: 'Events', path: '/events' },
+    { label: 'Gallery', path: '/gallery' },
     { label: 'Activities', path: '/activities' },
     { label: 'Team', path: '/team' },
     { label: 'Contact', path: '/contact' }

@@ -1,4 +1,4 @@
-/**
+ /**
  * EventFilter Component - Modern pill-style category filter
  */
 import { motion } from 'framer-motion';

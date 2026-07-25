@@ -165,11 +165,8 @@ export const Hero = () => {
                         strokeWidth="3"
                         fill="none"
                         animate={{
-                            d: [
-                                "M0,150 Q300,100 600,150 T1200,150",
-                                "M0,100 Q300,150 600,100 T1200,100",
-                                "M0,150 Q300,100 600,150 T1200,150",
-                            ]
+                            y: [0, -20, 0],
+                            opacity: [0.1, 0.25, 0.1]
                         }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                     />
@@ -179,11 +176,8 @@ export const Hero = () => {
                         strokeWidth="3"
                         fill="none"
                         animate={{
-                            d: [
-                                "M0,400 Q400,350 800,400 T1600,400",
-                                "M0,350 Q400,400 800,350 T1600,350",
-                                "M0,400 Q400,350 800,400 T1600,400",
-                            ]
+                            y: [0, 20, 0],
+                            opacity: [0.1, 0.25, 0.1]
                         }}
                         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                     />

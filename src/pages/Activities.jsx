@@ -135,14 +135,21 @@ const Activities = () => {
                             >
                                 <Card className="h-full flex flex-col overflow-hidden group" hover={true}>
                                     {/* Cover Image */}
-                                    <div className="relative h-48 -mx-8 -mt-8 mb-6 bg-gradient-to-br from-gdgBlue/20 via-gdgGreen/20 to-gdgYellow/20 overflow-hidden">
-                                        {/* Placeholder with icon */}
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="text-center">
-                                                <div className="text-6xl mb-2">📸</div>
-                                                <p className="text-gray-400 text-sm">Activity cover</p>
+                                    <div className="relative h-48 -mx-8 -mt-8 mb-6 overflow-hidden">
+                                        {activity.coverImage ? (
+                                            <img
+                                                src={activity.coverImage}
+                                                alt={activity.title}
+                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-gradient-to-br from-gdgBlue/20 via-gdgGreen/20 to-gdgYellow/20 flex items-center justify-center">
+                                                <div className="text-center">
+                                                    <div className="text-6xl mb-2">📸</div>
+                                                    <p className="text-gray-400 text-sm">Activity cover</p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        )}
 
                                         {/* Gradient overlay */}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -151,7 +158,7 @@ const Activities = () => {
                                         <motion.div
                                             className="absolute inset-0 bg-gdgBlue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                         />
-                                    </div>
+</div>
 
                                     {/* Tags */}
                                     <div className="flex flex-wrap gap-2 mb-4">
@@ -181,13 +188,7 @@ const Activities = () => {
                                     {/* Meta info */}
                                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                                         <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gdgBlue to-gdgGreen flex items-center justify-center text-white font-bold text-sm">
-                                                {activity.author?.charAt(0) || 'G'}
-                                            </div>
                                             <div>
-                                                <div className="font-bold text-sm text-gray-900">
-                                                    {activity.author}
-                                                </div>
                                                 <div className="text-xs text-gray-500">
                                                     {new Date(activity.date).toLocaleDateString('en-US', {
                                                         month: 'short',

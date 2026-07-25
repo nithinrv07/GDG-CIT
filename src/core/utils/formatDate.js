@@ -4,11 +4,13 @@
 
 /**
  * Format date to readable string
- * @param {string} dateString - Date string in YYYY-MM-DD format
- * @returns {string} Formatted date like "January 15, 2024"
+ * @param {string} dateString - Date string in YYYY-MM-DD format or TBA
+ * @returns {string} Formatted date like "January 15, 2026"
  */
 export const formatDate = (dateString) => {
+    if (!dateString || dateString === 'TBA') return 'Date TBA';
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
     return date.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
@@ -19,10 +21,12 @@ export const formatDate = (dateString) => {
 /**
  * Format date to short format
  * @param {string} dateString - Date string in YYYY-MM-DD format
- * @returns {string} Formatted date like "Jan 15, 2024"
+ * @returns {string} Formatted date like "Jan 15, 2026"
  */
 export const formatDateShort = (dateString) => {
+    if (!dateString || dateString === 'TBA') return 'TBA';
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
     return date.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
@@ -31,12 +35,14 @@ export const formatDateShort = (dateString) => {
 };
 
 /**
- * Check if date is in the future
- * @param {string} dateString - Date string in YYYY-MM-DD format
- * @returns {boolean} True if date is in the future
+ * Check if date is in the future (or TBA)
+ * @param {string} dateString - Date string in YYYY-MM-DD format or TBA
+ * @returns {boolean} True if date is in the future or TBA
  */
 export const isFutureDate = (dateString) => {
+    if (!dateString || dateString === 'TBA') return true;
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return true;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return date >= today;
@@ -48,7 +54,9 @@ export const isFutureDate = (dateString) => {
  * @returns {string} Relative time like "2 days ago" or "in 3 weeks"
  */
 export const getRelativeTime = (dateString) => {
+    if (!dateString || dateString === 'TBA') return 'Coming Soon';
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
     const now = new Date();
     const diffTime = date - now;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));

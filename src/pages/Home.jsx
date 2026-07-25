@@ -1,36 +1,33 @@
-/**
- * Home Page - Redesigned with modern layout
- */
-import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
-import { Hero } from '../components/homepage/Hero';
-import { AboutStory } from '../components/homepage/AboutStory';
-import { PulseCounters } from '../components/homepage/PulseCounters';
-import { Highlights } from '../components/homepage/Highlights';
-import { EventTimeline } from '../components/homepage/EventTimeline';
-import { ActivitiesSlider } from '../components/homepage/ActivitiesSlider';
-import { FAQ } from '../components/homepage/FAQ';
-import { PageLoader } from '../components/common/Loading';
+import { Hero } from '../components/home/Hero';
+import { AboutSection } from '../components/home/AboutSection';
+import { WhatWeDo } from '../components/home/WhatWeDo';
+import { BackgroundShapes } from '../components/home/BackgroundShapes';
+import { DotBackground } from '../components/home/DotBackground';
+import { Navbar } from '../components/home/Navbar';
+import { Roadmap } from '../components/home/Roadmap';
+import { StatsSection } from '../components/home/StatsSection';
+import { FAQSection } from '../components/home/FAQSection';
 import { useContent } from '../core/hooks/useContent';
 
 const Home = () => {
-    const { data: events, loading } = useContent('events');
-
-    if (loading) {
-        return <PageLoader />;
-    }
+    const { data: events } = useContent('events');
 
     return (
-        <div className="min-h-screen">
+        <div 
+            className="min-h-screen w-full relative overflow-hidden"
+            style={{ backgroundColor: '#fcf9f1' }}
+        >
             <Navbar />
-            <main>
+            <DotBackground />
+            <BackgroundShapes />
+            <main className="min-h-screen relative z-10">
                 <Hero />
-                <AboutStory />
-                <PulseCounters />
-                <Highlights />
-                {events && <EventTimeline events={events} />}
-                <ActivitiesSlider />
-                <FAQ />
+                <AboutSection />
+                <WhatWeDo />
+                <Roadmap events={events || []} />
+                <StatsSection />
+                <FAQSection />
             </main>
             <Footer />
         </div>

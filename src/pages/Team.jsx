@@ -1,12 +1,8 @@
-/**
- * Team Page - Modern design with hero section and enhanced cards
- */
 import { motion } from 'framer-motion';
-import { Navbar } from '../components/layout/Navbar';
+import { Navbar } from '../components/home/Navbar';
 import { Footer } from '../components/layout/Footer';
-import { Container } from '../components/layout/Container';
+import { DotBackground } from '../components/home/DotBackground';
 import { TeamGrid } from '../components/team/TeamGrid';
-import { SkeletonTeamCard } from '../components/common/Loading';
 import { useContent } from '../core/hooks/useContent';
 
 const Team = () => {
@@ -14,16 +10,11 @@ const Team = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+            <div className="min-h-screen w-full relative overflow-hidden" style={{ backgroundColor: '#fcf9f1' }}>
                 <Navbar />
-                <main className="pt-24 pb-16">
-                    <Container>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {[1, 2, 3, 4, 5].map((i) => (
-                                <SkeletonTeamCard key={i} />
-                            ))}
-                        </div>
-                    </Container>
+                <DotBackground />
+                <main className="min-h-screen pt-40 pb-20 relative z-10 flex items-center justify-center">
+                    <h2 className="text-4xl font-black uppercase">Loading Team...</h2>
                 </main>
                 <Footer />
             </div>
@@ -31,88 +22,42 @@ const Team = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+        <div className="min-h-screen w-full relative overflow-hidden" style={{ backgroundColor: '#fcf9f1' }}>
             <Navbar />
+            <DotBackground />
 
-            {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
-                {/* Background decorations */}
-                <div className="absolute inset-0 opacity-[0.04]">
-                    <div className="absolute top-20 left-20 w-96 h-96 bg-gdgGreen rounded-full blur-3xl" />
-                    <div className="absolute bottom-20 right-20 w-96 h-96 bg-gdgBlue rounded-full blur-3xl" />
-                </div>
-
-                <Container className="relative z-10">
-                    <motion.div
-                        className="text-center max-w-4xl mx-auto"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <motion.div
-                            className="inline-block mb-6"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                        >
-                            <span className="px-4 py-2 bg-gradient-to-r from-gdgGreen to-gdgBlue text-white rounded-full text-sm font-bold shadow-lg">
-                                👥 Our Amazing Team
-                            </span>
-                        </motion.div>
-
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            {/* Main Content */}
+            <main className="relative z-10 pt-32 pb-20">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                    
+                    {/* Hero Section */}
+                    <div className="text-center max-w-4xl mx-auto mb-20">
+                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-tight">
                             Meet The Team
                         </h1>
-
-                        <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-                            The passionate people building our vibrant developer community
+                        
+                        <p className="text-xl md:text-2xl font-medium mb-12">
+                            The passionate people building our vibrant developer community.
                         </p>
 
-                        {/* Stats */}
-                        <div className="flex flex-wrap justify-center gap-8 mt-12">
-                            <motion.div
-                                className="text-center"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 }}
-                            >
-                                <div className="text-4xl font-black text-gdgGreen mb-2">
-                                    {team?.length || 0}
-                                </div>
-                                <div className="text-sm text-gray-600 font-medium">Team Members</div>
-                            </motion.div>
-                            <motion.div
-                                className="text-center"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.5 }}
-                            >
-                                <div className="text-4xl font-black text-gdgBlue mb-2">
-                                    24/7
-                                </div>
-                                <div className="text-sm text-gray-600 font-medium">Community Support</div>
-                            </motion.div>
-                            <motion.div
-                                className="text-center"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.6 }}
-                            >
-                                <div className="text-4xl font-black text-gdgYellow mb-2">
-                                    100+
-                                </div>
-                                <div className="text-sm text-gray-600 font-medium">Events Organized</div>
-                            </motion.div>
+                        <div className="flex flex-wrap justify-center gap-6">
+                            <div className="bg-[#34A853] text-white border-[3px] border-black rounded-3xl px-8 py-6 flex-1 min-w-[200px]">
+                                <div className="text-5xl font-black mb-2">{team?.length || 0}</div>
+                                <div className="font-bold uppercase tracking-widest text-sm">Core Team Members</div>
+                            </div>
+                            <div className="bg-[#4285F4] text-white border-[3px] border-black rounded-3xl px-8 py-6 flex-1 min-w-[200px]">
+                                <div className="text-5xl font-black mb-2">24/7</div>
+                                <div className="font-bold uppercase tracking-widest text-sm">Community Support</div>
+                            </div>
+                            <div className="bg-[#FFD700] text-black border-[3px] border-black rounded-3xl px-8 py-6 flex-1 min-w-[200px]">
+                                <div className="text-5xl font-black mb-2">100+</div>
+                                <div className="font-bold uppercase tracking-widest text-sm">Events Organized</div>
+                            </div>
                         </div>
-                    </motion.div>
-                </Container>
-            </section>
+                    </div>
 
-            {/* Team Grid */}
-            <main className="pb-20">
-                <Container>
                     <TeamGrid members={team} />
-                </Container>
+                </div>
             </main>
 
             <Footer />

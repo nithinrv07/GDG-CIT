@@ -54,7 +54,7 @@ export const EventCard = ({ event, mode = 'compact' }) => {
                             </div>
                             <div>
                                 <div className="font-bold text-sm">{formatDate(event.date)}</div>
-                                <div className="text-sm text-gray-500">{event.time}</div>
+                                {event.time && <div className="text-sm text-gray-500">{event.time}</div>}
                             </div>
                         </div>
 
@@ -67,7 +67,7 @@ export const EventCard = ({ event, mode = 'compact' }) => {
                                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                 </svg>
                             </div>
-                            <div className="font-medium text-sm">{event.venue}</div>
+                            <div className="font-medium text-sm">{event.venue || 'TBA'}</div>
                         </div>
                     </div>
 
@@ -77,24 +77,29 @@ export const EventCard = ({ event, mode = 'compact' }) => {
                     </p>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-3 mt-auto">
+                    <div className="flex flex-col gap-3 mt-auto pt-2">
                         {event.registerUrl && (
-                            <Button
-                                variant="primary"
+                            <a
                                 href={event.registerUrl}
-                                className="flex-1 text-sm py-3 font-bold"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full py-3 px-5 bg-[#EA4335] text-white font-black uppercase tracking-widest text-center border-[3px] border-black rounded-full hover:-translate-y-1 hover:bg-[#4285F4] transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-sm flex items-center justify-center gap-2"
                             >
-                                Register Now
-                            </Button>
+                                <span>Register Now</span>
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
                         )}
                         {event.resourcesUrl && (
-                            <Button
-                                variant="outline"
+                            <a
                                 href={event.resourcesUrl}
-                                className="flex-1 text-sm py-3 font-bold"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full py-2.5 px-4 bg-[#FFD700] text-black font-black uppercase tracking-widest text-center border-[3px] border-black rounded-full hover:-translate-y-1 transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-sm"
                             >
                                 Resources
-                            </Button>
+                            </a>
                         )}
                     </div>
                 </Card>

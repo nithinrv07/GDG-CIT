@@ -1,72 +1,44 @@
 [
     {
-        "id": "building-scalable-microservices",
-        "title": "Building Scalable Microservices with Kubernetes",
-        "excerpt": "Learn how we architected a highly scalable microservices platform using Kubernetes and Docker in our recent workshop.",
-        "coverImage": "/images/activities/microservices.jpg",
-        "date": "2024-11-20",
-        "author": "Santhosh R",
+        "id": "open-source-and-ai-automation",
+        "title": "Open Sourse & AI Automation Workshop",
+        "excerpt": "The session focused on Open Sourse and AI Automation, where we explored Git and GitHub workflows, real open-source contribution practices, n8n-based automation, and shared practical project ideas that students can continue building on beyond the workshop.",
+        "coverImage": "/images/activities-img/ai-automation-thumbnail.jpeg",
+        "date": "2026-02-09",
+        "author": "Abijith U",
         "tags": [
-            "Cloud",
-            "Kubernetes",
-            "DevOps"
+            "n8n",
+            "open source",
+            "AI automation",
+            "Workshop"
         ],
-        "content": "In-depth guide on building scalable microservices..."
+        "content": "In-depth guide on AI Automation and Open Source..."
     },
     {
-        "id": "flutter-tips-tricks",
-        "title": "10 Flutter Tips Every Developer Should Know",
-        "excerpt": "Boost your Flutter development productivity with these essential tips and tricks we've learned from building production apps.",
-        "coverImage": "/images/activities/flutter-tips.jpg",
-        "date": "2024-10-15",
-        "author": "Hari Prasad",
-        "tags": [
-            "Flutter",
-            "Mobile",
-            "Android"
-        ],
-        "content": "Essential Flutter development tips..."
-    },
-    {
-        "id": "gdg-devfest-recap",
-        "title": "DevFest 2023 Recap: A Day of Learning and Innovation",
-        "excerpt": "Highlights from DevFest 2023 where over 800 developers came together to learn, network, and innovate.",
-        "coverImage": "/images/activities/devfest-recap.jpg",
-        "date": "2024-09-10",
+        "id": "tech-sprint-26",
+        "title": "Tech Sprint' 26",
+        "excerpt": "The TechSprint Hackathon journey has come to a successful close, and it has truly been an inspiring experience from start to finish. With 500+ teams registered and nearly 50 teams shortlisted, TechSprint witnessed incredible innovation, dedication, and problem-solving spirit from students. Congratulations to every team that participated and put in the effort - reaching this stage itself is an achievement.",
+        "coverImage": "/images/activities-img/tech-sprint-thumbnail.JPG",
+        "date": "2026-01-06",
         "author": "Subhashree B",
         "tags": [
-            "Events",
-            "Community",
-            "DevFest"
+            "Hackathon",
+            "Tech Sprint"
         ],
-        "content": "DevFest 2023 was an amazing success..."
+        "content": "Tech Sprint' 26"
     },
     {
-        "id": "getting-started-web3",
-        "title": "Getting Started with Web3 Development",
-        "excerpt": "A beginner's guide to understanding blockchain technology and building decentralized applications.",
-        "coverImage": "/images/activities/web3.jpg",
-        "date": "2024-08-05",
-        "author": "Akshay Kumar",
+        "id": "ground-to-cloud",
+        "title": "From Ground to Cloud: Build Your Cloud foundation",
+        "excerpt": "Ground to cloud, an interactive cloud foundation workshop with handson AWS demo focusing on building s strong cloud foundation.",
+        "coverImage": "/images/activities-img/cloud-computing-thumbnail.png",
+        "date": "2025-12-08",
+        "author": "Subhashree B",
         "tags": [
-            "Web3",
-            "Blockchain",
-            "DApps"
+            "Workshop",
+            "Cloud Foundation",
+            "AWS"
         ],
-        "content": "Introduction to Web3 development..."
-    },
-    {
-        "id": "design-systems-101",
-        "title": "Design Systems 101: Creating Consistent UI",
-        "excerpt": "How to build and maintain design systems that scale with your product and team.",
-        "coverImage": "/images/activities/design-systems.jpg",
-        "date": "2024-07-12",
-        "author": "Aishwarya M",
-        "tags": [
-            "Design",
-            "UI/UX",
-            "Frontend"
-        ],
-        "content": "Building effective design systems..."
+        "content": "Ground to cloud, an interactive cloud foundation workshop"
     }
 ]

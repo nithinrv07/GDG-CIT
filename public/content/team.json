@@ -3,8 +3,8 @@
         "id": "subhashree-b",
         "name": "Subhashree B",
         "role": "GDGoC Organizer",
-        "bio": "Leading the GDG on Campus CIT chapter and driving community growth and innovation.",
-        "photo": "",
+        "bio": "Leading the GDG on Campus CIT chapter, driving community growth, innovation, and the overall vision for the team.",
+        "image": "/images/team/subhashree.jpeg",
         "socials": {
             "github": "",
             "linkedin": "",
@@ -14,21 +14,9 @@
     {
         "id": "akshayakumaran",
         "name": "Akshayakumaran",
-        "role": "Cloud Computing Team Lead",
-        "bio": "Passionate about cloud technologies and helping students learn Google Cloud Platform.",
-        "photo": "",
-        "socials": {
-            "github": "",
-            "linkedin": "",
-            "instagram": ""
-        }
-    },
-    {
-        "id": "anish-karthikeyan",
-        "name": "Anish Karthikeyan",
-        "role": "AIML Lead",
-        "bio": "Exploring the world of Artificial Intelligence and Machine Learning, making AI accessible to everyone.",
-        "photo": "",
+        "role": "Vice President",
+        "bio": "Supporting the chapter's leadership and helping steer the community's growth, with a strong focus on cloud technologies and Google Cloud Platform.",
+        "image": "/images/team/akshay.png",
         "socials": {
             "github": "",
             "linkedin": "",
@@ -38,81 +26,9 @@
     {
         "id": "abijith",
         "name": "Abijith",
-        "role": "Web Development Team Lead",
-        "bio": "Full-stack web developer passionate about creating amazing web experiences.",
-        "photo": "",
-        "socials": {
-            "github": "",
-            "linkedin": "",
-            "instagram": ""
-        }
-    },
-    {
-        "id": "guru-vishal",
-        "name": "Guru Vishal",
-        "role": "Mobile App Development Lead",
-        "bio": "Building innovative mobile applications and helping others dive into mobile development.",
-        "photo": "",
-        "socials": {
-            "github": "",
-            "linkedin": "",
-            "instagram": ""
-        }
-    },
-    {
-        "id": "mithradevi",
-        "name": "Mithradevi",
-        "role": "Web 3 Team Lead",
-        "bio": "Exploring blockchain and decentralized technologies, bringing Web3 to the campus.",
-        "photo": "",
-        "socials": {
-            "github": "",
-            "linkedin": "",
-            "instagram": ""
-        }
-    },
-    {
-        "id": "rakshaniy",
-        "name": "Rakshaniy",
-        "role": "Event Management Team Lead",
-        "bio": "Organizing amazing events and ensuring smooth execution of all GDG activities.",
-        "photo": "",
-        "socials": {
-            "github": "",
-            "linkedin": "",
-            "instagram": ""
-        }
-    },
-    {
-        "id": "vigneshwar",
-        "name": "Vigneshwar",
-        "role": "Creative and Design Team Lead",
-        "bio": "Crafting beautiful designs and visual content for the GDG community.",
-        "photo": "",
-        "socials": {
-            "github": "",
-            "linkedin": "",
-            "instagram": ""
-        }
-    },
-    {
-        "id": "udhi-sri",
-        "name": "Udhi Sri",
-        "role": "Social Media Team Lead",
-        "bio": "Managing our social media presence and connecting with the developer community online.",
-        "photo": "",
-        "socials": {
-            "github": "",
-            "linkedin": "",
-            "instagram": ""
-        }
-    },
-    {
-        "id": "mohanavarsha",
-        "name": "Mohanavarsha",
-        "role": "Photography Team Lead",
-        "bio": "Capturing the best moments from our events and creating visual memories.",
-        "photo": "",
+        "role": "Secretary",
+        "bio": "Keeping the GDGoC CIT chapter organized, coordinating between teams and supporting smooth day-to-day operations.",
+        "image": "/images/team/abjith.png",
         "socials": {
             "github": "",
             "linkedin": "",

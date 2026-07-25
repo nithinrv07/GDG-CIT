@@ -64,12 +64,13 @@ export const ContactForm = () => {
         }
     };
 
+
     return (
-        <Card>
+        <div className="w-full">
             <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name field */}
                 <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-black uppercase tracking-widest text-black mb-2">
                         Name *
                     </label>
                     <input
@@ -78,19 +79,19 @@ export const ContactForm = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gdgBlue ${errors.name ? 'border-red-500' : 'border-gray-300'
+                        className={`w-full px-6 py-4 bg-[#fcf9f1] border-[3px] rounded-2xl focus:outline-none focus:bg-white transition-colors font-medium ${errors.name ? 'border-[#EA4335]' : 'border-black'
                             }`}
                         aria-invalid={errors.name ? 'true' : 'false'}
                         aria-describedby={errors.name ? 'name-error' : undefined}
                     />
                     {errors.name && (
-                        <p id="name-error" className="text-red-500 text-sm mt-1">{errors.name}</p>
+                        <p id="name-error" className="text-[#EA4335] text-sm font-bold mt-2">{errors.name}</p>
                     )}
                 </div>
 
                 {/* Email field */}
                 <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-black uppercase tracking-widest text-black mb-2">
                         Email *
                     </label>
                     <input
@@ -99,19 +100,19 @@ export const ContactForm = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gdgBlue ${errors.email ? 'border-red-500' : 'border-gray-300'
+                        className={`w-full px-6 py-4 bg-[#fcf9f1] border-[3px] rounded-2xl focus:outline-none focus:bg-white transition-colors font-medium ${errors.email ? 'border-[#EA4335]' : 'border-black'
                             }`}
                         aria-invalid={errors.email ? 'true' : 'false'}
                         aria-describedby={errors.email ? 'email-error' : undefined}
                     />
                     {errors.email && (
-                        <p id="email-error" className="text-red-500 text-sm mt-1">{errors.email}</p>
+                        <p id="email-error" className="text-[#EA4335] text-sm font-bold mt-2">{errors.email}</p>
                     )}
                 </div>
 
                 {/* Message field */}
                 <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-black uppercase tracking-widest text-black mb-2">
                         Message *
                     </label>
                     <textarea
@@ -120,37 +121,38 @@ export const ContactForm = () => {
                         value={formData.message}
                         onChange={handleChange}
                         rows="5"
-                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gdgBlue resize-none ${errors.message ? 'border-red-500' : 'border-gray-300'
+                        className={`w-full px-6 py-4 bg-[#fcf9f1] border-[3px] rounded-2xl focus:outline-none focus:bg-white transition-colors font-medium resize-none ${errors.message ? 'border-[#EA4335]' : 'border-black'
                             }`}
                         aria-invalid={errors.message ? 'true' : 'false'}
                         aria-describedby={errors.message ? 'message-error' : undefined}
                     />
                     {errors.message && (
-                        <p id="message-error" className="text-red-500 text-sm mt-1">{errors.message}</p>
+                        <p id="message-error" className="text-[#EA4335] text-sm font-bold mt-2">{errors.message}</p>
                     )}
                 </div>
 
-                <Button type="submit" variant="primary" className="w-full">
+                <button 
+                    type="submit" 
+                    className="w-full bg-[#34A853] text-white border-[3px] border-black rounded-2xl py-4 font-black uppercase tracking-widest text-lg hover:-translate-y-1 transition-transform"
+                >
                     Send Message
-                </Button>
+                </button>
             </form>
 
             {/* Success toast */}
             <AnimatePresence>
                 {submitted && (
                     <motion.div
-                        className="fixed bottom-8 right-8 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center gap-3"
+                        className="fixed bottom-8 right-8 bg-[#34A853] text-white border-[3px] border-black px-6 py-4 rounded-2xl flex items-center gap-3 z-50 shadow-[4px_4px_0_0_#000]"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
                     >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Message sent successfully!</span>
+                        <span className="text-2xl">✅</span>
+                        <span className="font-black uppercase tracking-widest text-sm">Message sent successfully!</span>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </Card>
+        </div>
     );
 };

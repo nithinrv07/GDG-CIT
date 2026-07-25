@@ -4,9 +4,12 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { EventPopupModal } from '../../components/common/EventPopupModal';
+
 // Lazy load pages for code splitting
 const Home = lazy(() => import('../../pages/Home'));
 const Events = lazy(() => import('../../pages/Events'));
+const Gallery = lazy(() => import('../../pages/Gallery'));
 const Activities = lazy(() => import('../../pages/Activities'));
 const Team = lazy(() => import('../../pages/Team'));
 const Contact = lazy(() => import('../../pages/Contact'));
@@ -21,11 +24,13 @@ const PageLoader = () => (
 
 export const AppRouter = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+            <EventPopupModal />
             <Suspense fallback={<PageLoader />}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/events" element={<Events />} />
+                    <Route path="/gallery" element={<Gallery />} />
                     <Route path="/activities" element={<Activities />} />
                     <Route path="/team" element={<Team />} />
                     <Route path="/contact" element={<Contact />} />

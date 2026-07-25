@@ -60,17 +60,18 @@ export const Navbar = () => {
         >
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="flex items-center justify-between h-20">
-                    {/* Logo - Enhanced */}
+                    {/* Logo - Enhanced with Custom GDG Logo */}
                     <Link to="/" className="flex items-center group">
                         <motion.div
                             className="flex items-center gap-3"
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            {/* Google G Logo Style - Larger */}
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gdgBlue via-gdgGreen to-gdgYellow flex items-center justify-center shadow-lg">
-                                <span className="text-white font-black text-2xl">G</span>
-                            </div>
+                            <img 
+                                src="/images/gdg-logo.png" 
+                                alt="GDG CIT Logo" 
+                                className="w-12 h-12 object-contain filter drop-shadow-md"
+                            />
                             <div className="flex flex-col">
                                 <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-gdgBlue to-gdgGreen bg-clip-text text-transparent">
                                     GDG
