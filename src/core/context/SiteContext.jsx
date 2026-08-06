@@ -2,6 +2,7 @@
  * Site Context - Global state management
  */
 import { createContext, useContext, useState, useEffect } from 'react';
+import { useContentContext } from './ContentContext';
 
 const SiteContext = createContext();
 
@@ -19,7 +20,18 @@ export const SiteProvider = ({ children }) => {
     const [settings, setSettings] = useState(null);
     const [socialLinks, setSocialLinks] = useState(null);
 
-    // Load global site data on mount
+    const contentCtx = useContentContext();
+
+    useEffect(() => {
+        if (contentCtx && !contentCtx.loading && contentCtx.siteData) {
+            setSiteData(contentCtx.siteData);
+            if (contentCtx.contact) {
+                setSocialLinks(contentCtx.contact.socials);
+            }
+        }
+    }, [contentCtx]);
+
+    // Load global site data on mount fallback
     useEffect(() => {
         const loadGlobalData = async () => {
             try {
@@ -35,9 +47,9 @@ export const SiteProvider = ({ children }) => {
                     socialResponse.json()
                 ]);
 
-                setSiteData(site);
+                if (!siteData) setSiteData(site);
                 setSettings(setts);
-                setSocialLinks(social);
+                if (!socialLinks) setSocialLinks(social);
                 setTheme(setts.theme || 'light');
             } catch (error) {
                 console.error('Error loading global site data:', error);
@@ -50,10 +62,11 @@ export const SiteProvider = ({ children }) => {
     const value = {
         theme,
         setTheme,
-        siteData,
+        siteData: contentCtx?.siteData || siteData,
         settings,
-        socialLinks
+        socialLinks: contentCtx?.contact?.socials || socialLinks
     };
 
     return <SiteContext.Provider value={value}>{children}</SiteContext.Provider>;
 };
+

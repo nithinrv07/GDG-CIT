@@ -64,7 +64,7 @@ export const Gallery = () => {
 
     if (galleryLoading) {
         return (
-            <div className="min-h-screen w-full relative overflow-hidden" style={{ backgroundColor: '#fcf9f1' }}>
+            <div className="min-h-screen w-full relative overflow-hidden bg-white">
                 <Navbar />
                 <DotBackground />
                 <main className="min-h-screen pt-40 pb-20 relative z-10 flex flex-col items-center justify-center">

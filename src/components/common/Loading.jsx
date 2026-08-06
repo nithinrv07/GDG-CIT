@@ -27,7 +27,7 @@ export const Spinner = ({ size = 'md', className = '' }) => {
 // Page loader with Google branding
 export const PageLoader = () => {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-white">
             <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

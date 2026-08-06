@@ -9,25 +9,12 @@
         "summary": "Turn Notes into Study Partners — A hands-on workshop to create your personal AI study assistant with Google tools.",
         "details": "Exclusively for CIT Students! Learn how to create instant summaries, smart study guides, interactive Q&A, and custom flashcards using Google AI tools. Registration starts July 25th and closes on July 29th, 2026. Limited seats available!",
         "image": "/images/activities-img/ai-automation-thumbnail.jpeg",
-        "posterImage": "/images/second-brain-poster.jpg",
-        "registerUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe2IRWJSKKbwfC7HMhGtljivXVGEQFqAWDQA3LGGI1QSeaL1w/viewform",
-        "resourcesUrl": "",
-        "featured": true
-    },
-    {
-        "id": "buildbeyond-ai-buildathon-2026",
-        "title": "BuildBeyond: AI-Powered Buildathon 2026",
-        "date": "TBA",
-        "time": "",
-        "venue": "TBA",
-        "category": "hackathon",
-        "summary": "A hands-on AI-powered Buildathon designed to immerse students in real-world AI development using Google Gemini and modern AI platforms",
-        "details": "A single-day event where teams conceptualise, build, and demo functional prototypes using advanced tools like Google Gemini, Firebase Studio, and AI vibe-coding platforms. Participants will work under open innovation themes and present their solutions to a judging panel of industry mentors.",
-        "image": "/images/activities-img/tech-sprint-thumbnail.JPG",
+        "posterImage": "",
         "registerUrl": "",
         "resourcesUrl": "",
         "featured": true
     },
+
     {
         "id": "google-techsprint-hackathon-2026",
         "title": "Google Techsprint Hackathon - 2026",

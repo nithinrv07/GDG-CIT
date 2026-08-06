@@ -60,7 +60,7 @@ const Events = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen w-full relative overflow-hidden" style={{ backgroundColor: '#fcf9f1' }}>
+            <div className="min-h-screen w-full relative overflow-hidden bg-white">
                 <Navbar />
                 <DotBackground />
                 <main className="min-h-screen pt-40 pb-20 relative z-10 flex items-center justify-center">

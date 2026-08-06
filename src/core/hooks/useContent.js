@@ -1,14 +1,49 @@
 /**
- * Custom hook to load and cache JSON content files
+ * Custom hook to load and cache content (connected to ContentContext for live updates)
  */
 import { useState, useEffect } from 'react';
+import { useContentContext } from '../context/ContentContext';
 
 export const useContent = (contentFile) => {
+    const context = useContentContext();
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!context || context.loading) return;
+
+        if (contentFile === 'events' && context.events) {
+            setData(context.events);
+            setLoading(false);
+            return;
+        }
+
+        if (contentFile === 'team' && context.team) {
+            setData(context.team);
+            setLoading(false);
+            return;
+        }
+
+        if (contentFile === 'site' && context.siteData) {
+            setData(context.siteData);
+            setLoading(false);
+            return;
+        }
+
+        if (contentFile === 'activities' && context.activities) {
+            setData(context.activities);
+            setLoading(false);
+            return;
+        }
+
+        if (contentFile === 'gallery' && context.gallery) {
+            setData(context.gallery);
+            setLoading(false);
+            return;
+        }
+
+        // Fallback fetch if key is not in context
         const loadContent = async () => {
             try {
                 setLoading(true);
@@ -31,7 +66,8 @@ export const useContent = (contentFile) => {
         };
 
         loadContent();
-    }, [contentFile]);
+    }, [contentFile, context]);
 
     return { data, loading, error };
 };
+

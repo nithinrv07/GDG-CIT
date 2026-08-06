@@ -28,7 +28,7 @@ const Activities = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+            <div className="min-h-screen bg-white">
                 <Navbar />
                 <main className="pt-24 pb-16">
                     <Container>

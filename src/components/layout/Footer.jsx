@@ -146,6 +146,12 @@ export const Footer = () => {
                             >
                                 Open Source ↗
                             </a>
+                            <Link
+                                to="/admin/login"
+                                className="bg-black text-white px-4 py-2 rounded-full border-[3px] border-black hover:bg-[#EA4335] transition-all"
+                            >
+                                🔒 Admin Portal
+                            </Link>
                         </div>
 
                         <p className="text-xs font-bold uppercase text-black text-center md:text-right max-w-xl p-3 rounded-2xl border-[3px] border-black bg-[#fcf9f1]">
